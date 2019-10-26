@@ -115,8 +115,14 @@ namespace ImGuizmo
 	// call inside your own window and before Manipulate() in order to draw gizmo to that window.
 	IMGUI_API void SetDrawlist();
 
+   // call before Manipulate() to change the scale of gizmo
+   IMGUI_API void SetGizmoScale(float scale);
+
+   // call before Manipulate() to change the thickness of gizmo
+   IMGUI_API void SetGizmoThickness(float thickness);
+
 	// call BeginFrame right after ImGui_XXXX_NewFrame();
-	IMGUI_API void BeginFrame();
+	IMGUI_API void BeginFrame() noexcept;
 
 	// return true if mouse cursor is over any gizmo control (axis, plan or screen component)
 	IMGUI_API bool IsOver();
